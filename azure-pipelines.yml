@@ -43,3 +43,15 @@ stages:
           containerRegistry: $(dockerRegistryServiceConnection)
           tags: |
             $(tag)
+
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: '$(Build.Repository.LocalPath)'
+          Contents: 'hemi.txt'
+          TargetFolder: '$(Build.ArtifactStagingDirectory)'
+      
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'hemi'
+          publishLocation: 'Container'
