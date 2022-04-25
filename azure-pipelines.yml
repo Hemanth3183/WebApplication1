@@ -47,7 +47,7 @@ stages:
       - task: CopyFiles@2
         inputs:
           SourceFolder: '$(Build.Repository.LocalPath)'
-          Contents: 'hemi.txt'
+          Contents: "*"
           TargetFolder: '$(Build.ArtifactStagingDirectory)'
       
       - task: PublishBuildArtifacts@1
