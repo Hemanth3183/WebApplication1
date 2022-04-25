@@ -19,7 +19,7 @@ pool:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '89bbbcf6-5550-4369-a72c-3da47e90f16d'
+  dockerRegistryServiceConnection: 'Azure Container Registry'
   imageRepository: 'hemanthwebapplication'
   containerRegistry: 'hemiacr.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
